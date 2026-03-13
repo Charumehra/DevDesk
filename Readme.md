@@ -33,3 +33,6 @@ https://api.github.com/
 
 This project was built to practice working with APIs, asynchronous JavaScript, and dynamic UI rendering.
 
+## Screenshot
+
+![Dev Detective Screenshot](images/screenshot.png)
