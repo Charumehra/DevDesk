@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search GitHub Profile</title>
+  <script defer src="script.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-gray-950 via-gray-900 to-black text-white min-h-screen p-6">
+
+  <button id="backHomeBattle" class="mb-10 px-4 py-2 bg-gray-600 hover:bg-gray-400 rounded font-semibold">
+    ← Back
+  </button>
+
+  <div class=" flex flex-col items-center">
+  <h1 class="text-3xl font-bold mb-6">Search GitHub Profile</h1>
+  
+  <div class="flex flex-col md:flex-row gap-4 mb-6 w-full md:w-1/2">
+    <input type="text" id="usernameInput" placeholder="Enter GitHub username" 
+           class="flex-1 px-4 py-2 rounded text-black" />
+    <button id="searchUserBtn" class="px-4 py-2 bg-blue-500 hover:bg-blue-600 rounded font-semibold">Search</button>
+  </div>
+
+
+  <div id="status" class="mb-4 text-yellow-400 font-medium"></div>
+
+  <div id="profileCard" class="w-full md:w-1/2 bg-gray-800 rounded-lg p-6 hidden flex-col items-center">
+    <img id="avatar" src="" alt="Avatar" class="w-32 h-32 rounded-full mb-4">
+    <h2 id="name" class="text-2xl font-bold mb-2"></h2>
+    <p id="bio" class="mb-2 text-center"></p>
+    <p id="joinDate" class="mb-2"></p>
+    <a id="portfolio" href="#" target="_blank" class="text-blue-400 underline mb-4">Portfolio</a>
+
+    <h3 class="text-xl font-semibold mb-2">Top 5 Latest Repositories</h3>
+    <ul id="repoList" class="space-y-1"></ul>
+    </div>
+  </div>
+</body>
+</html>

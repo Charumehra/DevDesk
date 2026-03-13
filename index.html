@@ -4,108 +4,64 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dev Detective</title>
+<link rel="stylesheet" href="style.css">
 <script src="https://cdn.tailwindcss.com"></script>
-<style>
-.cursor {
-  border-right: 3px solid white;
-  animation: blink 1s infinite;
-}
-@keyframes blink {
-  0%,100% { border-color: transparent; }
-  50% { border-color: white; }
-}
-
-/* typewriter container */
-.typewriter-container {
-  width: 100%;
-  max-width: 100%;       /* never exceed parent */
-  min-width: 0;          /* allow shrinking */
-  height: 4rem;          /* fixed height */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;      /* prevent text overflow */
-  word-break: break-word;/* break long words */
-  text-align: center;
-}
-
-/* responsive font scaling */
-.typewriter-container p {
-  font-size: clamp(1.25rem, 2vw, 2.5rem); /* min 20px, max 40px */
-}
-</style>
 </head>
 
-<body class="min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-black text-white flex items-center justify-center px-4">
+<body class="min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-black text-white px-6">
+
+<nav class="max-w-6xl mx-auto flex justify-between items-center py-6">
+
+<div class="text-2xl font-serif font-bold">
+Dev Detective 
+</div>
+
+<div class="text-gray-400 text-sm hidden md:block">
+Search • Discover • Battle Developers
+</div>
+
+</nav>
 
 
-<div class="w-full max-w-6xl flex flex-col md:flex-row gap-8 md:gap-12 items-center">
+<section class="max-w-6xl mx-auto flex flex-col items-center text-center mt-16 space-y-10">
 
-  <!-- LEFT CONTENT -->
-  <div class="w-full md:w-1/2 flex-shrink-0 space-y-6 text-center md:text-left p-6 bg-gray-900 rounded-lg">
-    <h1 class="text-4xl sm:text-5xl md:text-6xl font-serif">
-      Dev Detective
-    </h1>
-    <p class="text-sm sm:text-base font-bold text-gray-300">
-      Search. Discover. Explore developers on GitHub.
-    </p>
-    <div class="flex gap-4 justify-center md:justify-start flex-wrap">
-      <button class="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-bold">
-        Search Mode
-      </button>
-      <button class="px-6 py-3 bg-purple-600 hover:bg-purple-700 rounded-lg font-bold">
-        Battle Mode 
-      </button>
-    </div>
-  </div>
+<div class="typewriter-container">
+<p id="typewriter" class="font-mono text-blue-400 cursor"></p>
+</div>
 
-  <!-- RIGHT CONTENT -->
-  <div class="w-full md:w-1/2 flex justify-center items-center">
-    <div class="typewriter-container">
-      <p id="typewriter" class="font-mono text-blue-400 cursor m-0 text-center"></p>
-    </div>
-  </div>
+<div class="bg-gray-900/80 backdrop-blur-lg p-10 rounded-xl shadow-xl max-w-xl w-full space-y-6">
+
+<h1 class="text-4xl sm:text-5xl font-serif">
+Dev Detective
+</h1>
+
+<p class="text-gray-300 font-semibold">
+Search.   Discover.  Explore developers on GitHub.
+</p>
+
+<div class="flex gap-4 justify-center flex-wrap">
+
+<button id="searchPageBtn"
+class="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-bold transition hover:scale-105">
+
+Search Mode
+
+</button>
+
+<button id="battlePageBtn"
+class="px-6 py-3 bg-purple-600 hover:bg-purple-700 rounded-lg font-bold transition hover:scale-105">
+
+Battle Mode
+
+</button>
 
 </div>
 
-<script>
-const words = [
-  "Find Developers 🔎",
-  "Explore GitHub Profiles",
-  "Battle Dev Skills ⚔️",
-  "Discover Open Source"
-];
+</div>
 
-let wordIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
-const element = document.getElementById("typewriter");
+</section>
 
-function typeEffect() {
-  const currentWord = words[wordIndex];
-
-  if (!isDeleting) {
-    element.textContent = currentWord.substring(0, charIndex++);
-  } else {
-    element.textContent = currentWord.substring(0, charIndex--);
-  }
-
-  let speed = isDeleting ? 50 : 100;
-
-  if (!isDeleting && charIndex === currentWord.length + 1) {
-    speed = 1500;
-    isDeleting = true;
-  } else if (isDeleting && charIndex === 0) {
-    isDeleting = false;
-    wordIndex = (wordIndex + 1) % words.length;
-    speed = 300;
-  }
-
-  setTimeout(typeEffect, speed);
-}
-
-typeEffect();
-</script>
+<script defer src="script.js"></script>
 
 </body>
 </html>

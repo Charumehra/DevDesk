@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub Battle Mode</title>
+  <script defer src="script.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-gray-950 via-gray-900 to-black text-white min-h-screen   p-6">
+
+  <button id="backHomeBattle" class="mb-10 px-4 py-2 bg-gray-600 hover:bg-gray-400 rounded font-semibold">
+    ← Back
+  </button>
+<div class="flex flex-col items-center ">
+  <h1 class="text-3xl font-bold mb-6">GitHub Battle Mode</h1>
+
+  <div class="flex flex-col md:flex-row gap-4 mb-6 w-full md:w-3/4">
+    <input type="text" id="user1" placeholder="Enter first username" class="flex-1 px-4 py-2 rounded text-black">
+    <input type="text" id="user2" placeholder="Enter second username" class="flex-1 px-4 py-2 rounded text-black">
+    <button id="battleBtn" class="px-4 py-2 bg-red-500 hover:bg-red-600 rounded font-semibold">Battle</button>
+  </div>
+
+  <div id="status" class="mb-4 text-yellow-400 font-medium"></div>
+
+  <div class="flex flex-col md:flex-row gap-4 w-full md:w-3/4" id="resultContainer"></div>
+  </div>
+</body>
+</html>

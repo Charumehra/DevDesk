@@ -1,0 +1,21 @@
+.cursor{
+  border-right:3px solid white;
+  animation:blink 1s infinite;
+}
+
+@keyframes blink{
+  0%,100%{border-color:transparent;}
+  50%{border-color:white;}
+}
+
+.typewriter-container{
+  height:5rem;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+
+.typewriter-container p{
+  font-size:clamp(1.5rem,3vw,3rem);
+}
