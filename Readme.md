@@ -36,3 +36,6 @@ This project was built to practice working with APIs, asynchronous JavaScript, a
 ## Screenshot
 
 ![Dev Detective Screenshot](images/screenshot.png)
+
+## 🌐 Live Demo
+[Dev Detective](https://dev-desk-black.vercel.app/)
